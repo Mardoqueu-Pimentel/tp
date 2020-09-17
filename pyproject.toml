@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "tp"
+version = "0.2.0"
+description = ""
+authors = ["Mardoqueu Pimentel <mardoqueu.pimentel@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include="tp", from="src" }
+]
+
+[tool.poetry.dependencies]
+python = "~3.11"
+attrs = "^23.1.0"
+click = "^8.1.7"
+columnar = "^1.4.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.2"
+pytest-cov = "^4.1.0"
+
+[tool.poetry.group.lint.dependencies]
+autoflake = "^2.2.1"
+black = "^23.9.1"
+flake8 = "^6.1.0"
+isort = "^5.12.0"
+mypy = "^1.6.0"
+types-setuptools = "^68.2.0.0"
+
+[tool.poetry.scripts]
+tp = "tp.__main__:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
